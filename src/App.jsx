@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 
 import './App.css'
-import InventoryList from './InventoryList';
+
 
 
 function App() {
@@ -10,12 +10,12 @@ function App() {
 
   const addProduct = (product) => {
     setInventory([...inventory, product])
-  };
+  }
 
-  const updateQuantity = (id, amount) => {
+  const updateQuantity = (id, amaount) => {
     setInventory(
       inventory.map((item) =>
-        item.id === id ? {...item, Quantity: item.quantity + amount} : id
+        item.id === id ? {...item, Quantity: item.quantity + amaount} : id
       )
     )
   }
