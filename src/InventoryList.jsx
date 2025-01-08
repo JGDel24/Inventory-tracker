@@ -1,12 +1,11 @@
 import React from "react";
+import product from "./product";
 
-import Product from "./product";
-
-function InventoryList({item, updateQuantity}) {
+function InventoryList({inventory, updateQuantity}) {
     return (
         <>
             {inventory.map((item) =>
-                <Product key={item} item={item} updateQuantity={updateQuantity}/>
+                <product key={item} item={item} updateQuantity={updateQuantity}/>
             )}
         </>
     )
