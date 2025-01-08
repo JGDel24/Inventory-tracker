@@ -1,32 +1,32 @@
 import React, {useState} from 'react';
 import InventoryList from './InventoryList';
+import AddProductForm from './AddProductForm';
+
+
 import './App.css'
 
 function App() {
-
-  const [inventory, setInventory] = useState([]);
+  const [inventory, SetInventory] = useState([]);
 
   const addProduct = (product) => {
-    setInventory(...inventory, product)
+    SetInventory([...inventory, product])
   }
 
   const updateQuantity = (id, amount) => {
-    setInventory(
-      inventory.map((item) =>
-        item.id === id ? {...item, Quantity: item.quantity + amount} : id
+    SetInventory(
+      inventory.map((item) => 
+        item.id=== id ? {...item, Quantity: item.quantity + amount} :id
       )
     )
   }
 
   return (
     <>
-    <h1>Inventory Tracker</h1>
-    <InventoryList/>
-    
+      <h1>Inventory Tracking</h1>
+      <AddProductForm />
+      <InventoryList />
     </>
   )
-
-
 
 }
 
