@@ -1,37 +1,35 @@
 import React, {useState} from 'react';
-import InventoryList from './InventoryList';
 import AddProductForm from './AddProductForm';
-
-
+import InventoryList from './InventoryList';
+import Weather from './Weather';
 import './App.css'
 
+
 function App() {
-  const [inventory, SetInventory] = useState([]);
+    const [inventory, setInventory] = useState([]);
 
-  const addProduct = (product) => {
-    SetInventory([...inventory, product])
-  }
+    const addProduct = (product) => {
+        setInventory([...inventory, product])
+    };
 
-  const updateQuantity = (id, amount) => {
-    SetInventory(
-      inventory.map((item) => 
-        item.id=== id ? {...item, Quantity: item.quantity + amount} :id
-      )
+    const updateQuantity = (id, amount) => {
+        setInventory(
+            inventory.map((item) =>
+                item.id === id ? {...item, Quantity: item.quantity + amount} : id
+            )
+        )
+    }
+
+    return (
+        <>
+            <h1>Inventory Tracking</h1>
+            <AddProductForm />
+            <InventoryList />
+            <Weather />
+        </>
     )
-  }
-
-  return (
-    <>
-      <h1>Inventory Tracking</h1>
-      <AddProductForm />
-      <InventoryList />
-    </>
-  )
 
 }
-
-  
-
 
 export default App
 
