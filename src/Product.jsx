@@ -1,18 +1,18 @@
 import React from "react";
 
-function Product(item, updateQuantity) {
+function Product({item, updateQuantity}) {
+
     const handleDecrease = () => {
         if (item.quantity === 1) {
             sendEmail(item.name)
         }
         updateQuantity(item.id, -1)
-    }
+    };
 
     const sendEmail = (productName) => {
-        console.log(` Email: ${productName} is out of Stock`)
-        alert(`${productName} is out of Stock, an alert has been sent`)
+        console.log(`${productName} is out of stock.`)
+        alert(`${productName} is out of stock.`)
     }
-
 
     return (
         <>
@@ -24,3 +24,5 @@ function Product(item, updateQuantity) {
         </>
     )
 }
+
+export default Product
